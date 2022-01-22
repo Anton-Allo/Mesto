@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Место</title>
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+
+<body class="body">
+  <div class="page">
+    <header class="header">
+      <div class="header__logo">
+        <img src="./image/header-image.svg" alt="Логотип">
+      </div>
+    </header>
+    <section class="profile">
+      <img src="./image/avatar-profile.jpg" alt="Аватар" class="profile__avatar">
+      <div class="profile__info">
+        <h1 class="profile__name">Жак-Ив Кусто</h1>
+        <button class="profile__edit-button"><img src="./image/button_edit.svg" alt="Редактировать"></button>
+        <p class="profile__occupation">Исследователь океана</p>
+      </div>
+      <button class="profile__add-button"><img src="./image/button_add.svg" alt="Добавить"
+          class="profile__add-icon"></button>
+    </section>
+    <section class="cards">
+      <div class="card">
+        <img src="./image/Alpy.jpg" alt="Альпы" class="card__image">
+        <div class="card__container">
+          <h2 class="card__title">Альпы</h2>
+          <button class="card__like-button"></button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./image/Ararat.jpg" alt="Арарат" class="card__image">
+        <div class="card__container">
+          <h2 class="card__title">Арарат</h2>
+          <button class="card__like-button"></button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./image/Elbrus.jpg" alt="Эльбрус" class="card__image">
+        <div class="card__container">
+          <h2 class="card__title">Эльбрус</h2>
+          <button class="card__like-button"></button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./image/Erdjias.jpg" alt="Эрджияс" class="card__image">
+        <div class="card__container">
+          <h2 class="card__title">Эрджияс</h2>
+          <button class="card__like-button"></button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./image/Gimalai.jpg" alt="Гималаи" class="card__image">
+        <div class="card__container">
+          <h2 class="card__title">Гималаи</h2>
+          <button class="card__like-button"></button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./image/Sochi.jpg" alt="Сочи" class="card__image">
+        <div class="card__container">
+          <h2 class="card__title">Сочи</h2>
+          <button class="card__like-button"></button>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+    </footer>
+    <div class="popup">
+      <div class="popup__container">
+        <button class="popup__close"></button>
+        <form action="#" class="popup__form">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input type="text" name="name_profile" class="popup__input-form" required>
+          <input type="text" name="occupation_profile" class="popup__input-form" required>
+          <button class="popup__save-button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="./scripts/index.js"></script>
+</body>
+
+</html>
