@@ -1,5 +1,6 @@
 .header__logo {
   margin: 0;
+  margin-bottom: 41px;
   display: flex;
   justify-content: start;
 }
@@ -7,5 +8,8 @@
 @media screen and (max-width: 321px) {
   .header__logo {
     margin-left: 27px;
+    margin-bottom: 31px;
+    width: 103px;
+    height: 24px;
   }
 }

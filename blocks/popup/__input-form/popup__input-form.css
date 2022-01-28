@@ -3,10 +3,10 @@
   margin: 0;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  margin-top: 41px;
+  margin-top: 54px;
   width: 358px;
-  height: 27px;
-  font-family: 'Inter';
+  height: 14px;
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -15,13 +15,12 @@
 }
 
 .popup__input-form:last-of-type {
-  margin-top: 17px;
+  margin-top: 30px;
 }
 
 @media screen and (max-width: 530px) {
   .popup__input-form {
     width: 238px;
-    height: 14px;
-    margin-top: 62px;
+    margin-top: 75px;
   }
 }

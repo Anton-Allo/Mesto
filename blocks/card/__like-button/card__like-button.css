@@ -6,7 +6,7 @@
   height: 19px;
   border: none;
   background-color: #ffffff;
-  background-image: url(../../../image/like-button.svg);
+  background-image: url(../../../images/like-button.svg);
 }
 
 .card__like-button:hover {
