@@ -6,8 +6,7 @@
 
 @media screen and (max-width: 576px) {
   .profile__info {
-    margin: 0 auto;
-    margin-bottom: 36px;
+    margin: 7px 0 0 45px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

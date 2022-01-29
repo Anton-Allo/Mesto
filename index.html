@@ -19,7 +19,7 @@
         <img src="./images/avatar-profile.jpg" alt="Аватар" class="profile__avatar">
         <div class="profile__info">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <button type="button" class="profile__edit-button"></button>
+          <button aria-label="Редактировать" type="button" class="profile__edit-button"></button>
           <p class="profile__occupation">Исследователь океана</p>
         </div>
         <button type="button" class="profile__add-button"><img src="./images/button_add.svg" alt="Добавить"
@@ -30,42 +30,42 @@
           <img src="./images/alpy.jpg" alt="Альпы" class="card__image">
           <div class="card__container">
             <h2 class="card__title">Альпы</h2>
-            <button type="button" class="card__like-button"></button>
+            <button aria-label="Оценить" type="button" class="card__like-button"></button>
           </div>
         </article>
         <article class="card">
           <img src="./images/ararat.jpg" alt="Арарат" class="card__image">
           <div class="card__container">
             <h2 class="card__title">Арарат</h2>
-            <button type="button" class="card__like-button"></button>
+            <button aria-label="Оценить" type="button" class="card__like-button"></button>
           </div>
         </article>
         <article class="card">
           <img src="./images/elbrus.jpg" alt="Эльбрус" class="card__image">
           <div class="card__container">
             <h2 class="card__title">Эльбрус</h2>
-            <button type="button" class="card__like-button"></button>
+            <button aria-label="Оценить" type="button" class="card__like-button"></button>
           </div>
         </article>
         <article class="card">
           <img src="./images/erdjias.jpg" alt="Эрджияс" class="card__image">
           <div class="card__container">
             <h2 class="card__title">Эрджияс</h2>
-            <button type="button" class="card__like-button"></button>
+            <button aria-label="Оценить" type="button" class="card__like-button"></button>
           </div>
         </article>
         <article class="card">
           <img src="./images/gimalai.jpg" alt="Гималаи" class="card__image">
           <div class="card__container">
             <h2 class="card__title">Гималаи</h2>
-            <button type="button" class="card__like-button"></button>
+            <button aria-label="Оценить" type="button" class="card__like-button"></button>
           </div>
         </article>
         <article class="card">
           <img src="./images/sochi.jpg" alt="Сочи" class="card__image">
           <div class="card__container">
             <h2 class="card__title">Сочи</h2>
-            <button type="button" class="card__like-button"></button>
+            <button aria-label="Оценить" type="button" class="card__like-button"></button>
           </div>
         </article>
       </section>
@@ -75,12 +75,12 @@
     </footer>
     <div class="popup">
       <div class="popup__container">
-        <button type="button" class="popup__close"></button>
-        <form name="popup-form" action="#" class="popup__form">
+        <button aria-label="Выход" type="button" class="popup__close"></button>
+        <form name="form-edit_profile-info" action="#" class="popup__form">
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input type="text" name="name_profile" class="popup__input-form" required>
-          <input type="text" name="occupation_profile" class="popup__input-form" required>
-          <button type="submit" class="popup__save-button">Сохранить</button>
+          <input type="text" placeholder="Ваше имя" name="name_profile" class="popup__input-form" required>
+          <input type="text" placeholder="Род занятий" name="occupation_profile" class="popup__input-form" required>
+          <button aria-label="Сохранить" type="submit" class="popup__save-button">Сохранить</button>
         </form>
       </div>
     </div>

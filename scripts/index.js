@@ -17,9 +17,6 @@ function closePopup() {
   popup.classList.remove('popup_opened');
 }
 
-profileEditButton.addEventListener('click', openPopup);
-popupCloseButton.addEventListener('click', closePopup);
-
 function getFormProfileValue(event) {
   event.preventDefault();
   profileInfoName.textContent = popupFormInputName.value;
@@ -27,5 +24,7 @@ function getFormProfileValue(event) {
   closePopup();
 }
 
+profileEditButton.addEventListener('click', openPopup);
+popupCloseButton.addEventListener('click', closePopup);
 popupForm.addEventListener('submit', getFormProfileValue);
 
