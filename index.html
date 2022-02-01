@@ -26,65 +26,45 @@
             class="profile__add-icon"></button>
       </section>
       <section class="cards">
-        <article class="card">
-          <img src="./images/alpy.jpg" alt="Альпы" class="card__image">
-          <div class="card__container">
-            <h2 class="card__title">Альпы</h2>
-            <button aria-label="Оценить" type="button" class="card__like-button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img src="./images/ararat.jpg" alt="Арарат" class="card__image">
-          <div class="card__container">
-            <h2 class="card__title">Арарат</h2>
-            <button aria-label="Оценить" type="button" class="card__like-button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img src="./images/elbrus.jpg" alt="Эльбрус" class="card__image">
-          <div class="card__container">
-            <h2 class="card__title">Эльбрус</h2>
-            <button aria-label="Оценить" type="button" class="card__like-button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img src="./images/erdjias.jpg" alt="Эрджияс" class="card__image">
-          <div class="card__container">
-            <h2 class="card__title">Эрджияс</h2>
-            <button aria-label="Оценить" type="button" class="card__like-button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img src="./images/gimalai.jpg" alt="Гималаи" class="card__image">
-          <div class="card__container">
-            <h2 class="card__title">Гималаи</h2>
-            <button aria-label="Оценить" type="button" class="card__like-button"></button>
-          </div>
-        </article>
-        <article class="card">
-          <img src="./images/sochi.jpg" alt="Сочи" class="card__image">
-          <div class="card__container">
-            <h2 class="card__title">Сочи</h2>
-            <button aria-label="Оценить" type="button" class="card__like-button"></button>
-          </div>
-        </article>
       </section>
     </main>
     <footer class="footer">
       <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
-    <div class="popup">
+    <div class="popup popup__edit-button">
       <div class="popup__container">
-        <button aria-label="Выход" type="button" class="popup__close"></button>
+        <button aria-label="Выход" type="button" class="popup__close popup__edit-close-button"></button>
         <form name="form-edit_profile-info" action="#" class="popup__form">
           <h2 class="popup__title">Редактировать профиль</h2>
           <input type="text" placeholder="Ваше имя" name="name_profile" class="popup__input-form" required>
           <input type="text" placeholder="Род занятий" name="occupation_profile" class="popup__input-form" required>
-          <button aria-label="Сохранить" type="submit" class="popup__save-button">Сохранить</button>
+          <button aria-label="Сохранить" type="submit" class="popup__submit-button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup__add-button">
+      <div class="popup__container">
+        <button aria-label="Выход" type="button" class="popup__close popup__add-close-button"></button>
+        <form name="form-add-card" action="#" class="popup__form">
+          <h2 class="popup__title">Новое место</h2>
+          <input type="text" placeholder="Название" name="name_location" class="popup__input-form" required>
+          <input type="text" placeholder="Ссылка на картинку" name="link_image" class="popup__input-form" required>
+          <button aria-label="Создать" type="submit" class="popup__submit-button">Создать</button>
         </form>
       </div>
     </div>
   </div>
+
+  <template id="cardTemplate">
+    <article class="card">
+      <img class="card__image">
+      <div class="card__container">
+        <h2 class="card__title"></h2>
+        <button aria-label="Оценить" type="button" class="card__like-button"></button>
+      </div>
+    </article>
+  </template>
+
   <script src="./scripts/index.js"></script>
 </body>
 
