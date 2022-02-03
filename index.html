@@ -14,7 +14,7 @@
     <header class="header">
         <img src="./images/header-image.svg" alt="Логотип" class="header__logo">
     </header>
-    <main>
+    <main class="content">
       <section class="profile">
         <img src="./images/avatar-profile.jpg" alt="Аватар" class="profile__avatar">
         <div class="profile__info">
@@ -54,15 +54,26 @@
       </div>
     </div>
   </div>
+  <div class="popup popup__open-image">
+    <div class="popup__image-container">
+      <button aria-label="Выход" type="button" class="popup__close popup__image-close-button"></button>
+      <img src="#" class="popup__image" alt="Фотография">
+      <h2 class="popup__title-image"></h2>
+    </div>
+  </div>
+</div>
 
   <template id="cardTemplate">
-    <article class="card">
-      <img class="card__image">
+    <div class="card">
+      <div class="card__image-container">
+        <img class="card__image">
+        <button aria-label="Удалить" type="button" class="card__trash-button"></button>
+      </div>
       <div class="card__container">
         <h2 class="card__title"></h2>
         <button aria-label="Оценить" type="button" class="card__like-button"></button>
       </div>
-    </article>
+    </div>
   </template>
 
   <script src="./scripts/index.js"></script>
