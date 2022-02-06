@@ -25,43 +25,42 @@
         <button type="button" class="profile__add-button"><img src="./images/button_add.svg" alt="Добавить"
             class="profile__add-icon"></button>
       </section>
-      <section class="cards">
+      <section class="cards cards__list">
       </section>
     </main>
     <footer class="footer">
       <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
-    <div class="popup popup__edit-button">
+    <section class="popup popup__edit-profile-info">
       <div class="popup__container">
-        <button aria-label="Выход" type="button" class="popup__close popup__edit-close-button"></button>
-        <form name="form-edit_profile-info" action="#" class="popup__form">
+        <button aria-label="Выход" type="button" class="popup__close"></button>
+        <form name="form-edit_profile-info" action="#" class="popup__form popup__edit-form">
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input type="text" placeholder="Ваше имя" name="name_profile" class="popup__input-form" required>
-          <input type="text" placeholder="Род занятий" name="occupation_profile" class="popup__input-form" required>
-          <button aria-label="Сохранить" type="submit" class="popup__submit-button">Сохранить</button>
+          <input type="text" placeholder="Ваше имя" name="name_profile" class="popup__input-form popup__input-form-name" required>
+          <input type="text" placeholder="Род занятий" name="occupation_profile" class="popup__input-form popup__input-form-occupation" required>
+          <button aria-label="Сохранить" type="submit" class="popup__submit-button popup__save-form-button">Сохранить</button>
         </form>
       </div>
-    </div>
-    <div class="popup popup__add-button">
+    </section>
+    <section class="popup popup__add-button">
       <div class="popup__container">
-        <button aria-label="Выход" type="button" class="popup__close popup__add-close-button"></button>
-        <form name="form-add-card" action="#" class="popup__form">
+        <button aria-label="Выход" type="button" class="popup__close"></button>
+        <form name="form-add-card" action="#" class="popup__form popup__add-form">
           <h2 class="popup__title">Новое место</h2>
-          <input type="text" placeholder="Название" name="name_location" class="popup__input-form" required>
-          <input type="text" placeholder="Ссылка на картинку" name="link_image" class="popup__input-form" required>
-          <button aria-label="Создать" type="submit" class="popup__submit-button">Создать</button>
+          <input type="text" placeholder="Название" name="name_location" class="popup__input-form popup__input-form-location" required>
+          <input type="text" placeholder="Ссылка на картинку" name="link_image" class="popup__input-form popup__input-form-link" required>
+          <button aria-label="Создать" type="submit" class="popup__submit-button popup__create-form-button">Создать</button>
         </form>
       </div>
-    </div>
+    </section>
   </div>
-  <div class="popup popup__open-image">
-    <div class="popup__image-container">
-      <button aria-label="Выход" type="button" class="popup__close popup__image-close-button"></button>
-      <img src="#" class="popup__image" alt="Фотография">
-      <h2 class="popup__title-image"></h2>
-    </div>
-  </div>
-</div>
+  <section class="popup popup__open-image">
+    <figure class="popup__image-container">
+      <button aria-label="Выход" type="button" class="popup__close"></button>
+      <img src="#" class="popup__view-image" alt="Фотография">
+      <figcaption class="popup__title-image"></figcaption>
+    </figure>
+  </section>
 
   <template id="cardTemplate">
     <div class="card">
