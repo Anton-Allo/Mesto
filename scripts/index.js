@@ -7,7 +7,7 @@ const profileInfoOccupation = document.querySelector('.profile__occupation');
 const profileInfoName = document.querySelector('.profile__name');
 const profileEditButton = document.querySelector('.profile__edit-button');
 const imageAddButton = document.querySelector('.profile__add-button');
-//-Edit form profile-
+//-Popup edit form profile-
 const popupEditProfileInfo = document.querySelector('.popup_edit-profile-info');
 const popupInputFormName = document.querySelector('.popup__input-form-name');
 const popupInputFormOccupation = document.querySelector('.popup__input-form-occupation');
@@ -21,7 +21,7 @@ const popupOpenImage = document.querySelector('.popup_open-image');
 const popupViewImage = document.querySelector('.popup__view-image');
 const popupTitleImage = document.querySelector('.popup__title-image');
 
-//-Form input add image to card-
+//-Popup form input add image to card-
 const popupAddButton = document.querySelector('.popup_add-button');
 const popupInputFormLocation = document.querySelector('.popup__input-form-location');
 const popupInputFormLink = document.querySelector('.popup__input-form-link');
@@ -30,10 +30,12 @@ const popupInputFormLink = document.querySelector('.popup__input-form-link');
 //-function open and close popup-
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  closePopupEventKeyEscape();
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  removeEventKeyEscape();
 }
 
 //-button popup close-
@@ -43,6 +45,31 @@ function closePopup(popup) {
     closePopup(popupClose);
   });
 }); 
+
+//-Close popup with keypress "Escape"- 
+function eventKeyEscape (evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
+  }
+}
+
+function closePopupEventKeyEscape() {
+  document.addEventListener('keydown', eventKeyEscape);
+}
+
+function removeEventKeyEscape() {
+  document.removeEventListener('keydown', eventKeyEscape);
+}
+
+//-Close windows to click overlay-
+window.addEventListener('click', (evt) => {
+  if (evt.target.classList.contains('popup_opened')) {
+    const popupOpened = document.querySelector('.popup_opened');
+    closePopup(popupOpened);
+    evt.stopPropagation();
+  }
+});
 
  //-functions edit form profile and popup profile-
  function openPopupFormProfile() {
