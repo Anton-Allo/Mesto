@@ -1,14 +1,5 @@
 "use strict";
 
-//object enable validation
-enableValidation({
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input-form',
-  submitButtonSelector: '.popup__submit-button',
-  inactiveButtonClass: 'popup__submit-button_disabled',
-  inputErrorClass: 'popup__input-form_error',
-  errorClass: 'popup__input-error_visible'
-}); 
 
 //-Checked active popup-
 function checkedOpenedPopup(popup) {
@@ -16,9 +7,9 @@ function checkedOpenedPopup(popup) {
     formSelector: '.popup__form',
     inputSelector: '.popup__input-form',
     submitButtonSelector: '.popup__submit-button',
-    inactiveButtonClass: '.popup__submit-button_disabled',
-    inputErrorClass: '.popup__input-form_error',
-    errorClass: '.popup__input-error_visible'
+    inactiveButtonClass: 'popup__submit-button_disabled',
+    inputErrorClass: 'popup__input-form_error',
+    errorClass: 'popup__input-error_visible'
   };
 //disable save button
   const allInputsList = popup.querySelectorAll('input');
@@ -110,3 +101,13 @@ function enableValidation(formsList) {
     });
   });
 }
+
+//object enable validation
+enableValidation({
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input-form',
+  submitButtonSelector: '.popup__submit-button',
+  inactiveButtonClass: 'popup__submit-button_disabled',
+  inputErrorClass: 'popup__input-form_error',
+  errorClass: 'popup__input-error_visible'
+});

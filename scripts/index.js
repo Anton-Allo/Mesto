@@ -1,5 +1,6 @@
 //*Variables*
 
+const popups = document.querySelectorAll('.popup');
 //-Popup close
 const popupCloseButtonList = document.querySelectorAll('.popup__close');
 //-Profile-
@@ -25,6 +26,7 @@ const popupTitleImage = document.querySelector('.popup__title-image');
 const popupAddButton = document.querySelector('.popup_add-button');
 const popupInputFormLocation = document.querySelector('.popup__input-form-location');
 const popupInputFormLink = document.querySelector('.popup__input-form-link');
+const popupAddForm = document.querySelector('.popup__add-form');
 
 //-Functions-
 //-function open and close popup-
@@ -63,12 +65,12 @@ function removeEventKeyEscape() {
 }
 
 //-Close windows to click overlay-
-window.addEventListener('click', (evt) => {
-  if (evt.target.classList.contains('popup_opened')) {
-    const popupOpened = document.querySelector('.popup_opened');
-    closePopup(popupOpened);
-    evt.stopPropagation();
-  }
+popups.forEach((popup) => {
+    popup.addEventListener('click', (evt) => {
+        if (evt.target.classList.contains('popup_opened')) {
+            closePopup(popup);
+        }
+    });
 });
 
  //-functions edit form profile and popup profile-
@@ -76,6 +78,7 @@ window.addEventListener('click', (evt) => {
   popupInputFormName.value = profileInfoName.textContent;
   popupInputFormOccupation.value = profileInfoOccupation.textContent;
   openPopup(popupEditProfileInfo);
+  checkedOpenedPopup(popupEditProfileInfo);
 }
 
 function submitProfileForm(evt) {
@@ -86,8 +89,9 @@ function submitProfileForm(evt) {
 }
 
 //-functions popup and form add image, reset input -
-function popupAddImage() {
+function addPopupImage() {
   openPopup(popupAddButton);
+  checkedOpenedPopup(popupAddButton);
 }
  
 function submitCardForm(evt) {
@@ -98,7 +102,7 @@ function submitCardForm(evt) {
 }
 
 function resetInputInfo() {
-  document.querySelector('.popup__add-form').reset();
+  popupAddForm.reset();
 }
 
 //-Function view image-
@@ -151,7 +155,7 @@ function createCard(item) {
 //-add eventListener-
 profileEditButton.addEventListener('click', openPopupFormProfile);
 popupEditProfileInfo.addEventListener('submit', submitProfileForm);
-imageAddButton.addEventListener('click', popupAddImage);
+imageAddButton.addEventListener('click', addPopupImage);
 popupAddButton.addEventListener('submit', submitCardForm);
 
 render ();
