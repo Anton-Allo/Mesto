@@ -1,4 +1,4 @@
-//'use strict';
+'use strict';
 
 export class FormValidator {
   constructor(formList, formPopupActive) {
@@ -50,7 +50,7 @@ export class FormValidator {
     const inputErrorText = this._formPopupActive.querySelector(`.${inputItem.id}-error`);
     inputErrorText.textContent = '';
     inputErrorText.classList.add(this._errorClass);
-    inputErrorText.textContent = inputItem.validityMessage;
+    inputErrorText.textContent = inputItem.validationMessage;
   }
 
   _deactivateInputError(inputItem) {

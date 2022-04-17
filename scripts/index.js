@@ -54,7 +54,7 @@ function openPopup(popup) {
 export function openImagePopup(linkImage, nameImage) {
   popupViewImage.src = linkImage;
   popupViewImage.alt = nameImage;
-  popupViewImage.textContent = nameImage;
+  popupTitleImage.textContent = nameImage;
   openPopup(popupOpenImage);
 }
 
@@ -118,7 +118,7 @@ function removeEventEscape() {
 
 popups.forEach(popup => {
   popup.addEventListener('mousedown', evt => {
-    if (evt.target.classList.contains('popup_opened') | evt.target.classList.contains('popup__button-close')) {
+    if (evt.target.classList.contains('popup_opened') | evt.target.classList.contains('popup__close')) {
       closePopup(popup);
     }
   });
