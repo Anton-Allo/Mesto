@@ -70,10 +70,14 @@ export class FormValidator {
   }
 
   _setEventListeners(inputItem) {
+    this._formPopupActive.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+    });
+
     inputItem.addEventListener('input', () => {
       this._checkInputValidity(inputItem);
     });
-  }
+  };
 
   enableValidation() {
     this._arrInputsFormActive.forEach(inputItem => {
