@@ -5,4 +5,6 @@
   font-size: 12px;
   line-height: 15px;
   color: #ff0000;
+  align-self: start;
+  padding-left: 36px;
 }

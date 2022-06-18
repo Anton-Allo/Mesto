@@ -1,7 +1,7 @@
 'use strict';
 
 import '../pages/index.css';
-import * as Constants from '../utils/Constants.js';
+import * as constants from '../utils/Constants.js';
 import { Card } from '../components/Card.js';
 import { variables } from '../utils/ConfigValidation.js';
 import { FormValidator } from '../components/FormValidator.js';
@@ -13,8 +13,8 @@ import { UserInfo } from '../components/UserInfo.js';
 
 //*Variables*//
 
-const formAddCardValidator = new FormValidator(variables, Constants.formAddCard);
-const formEditProfileValidator = new FormValidator(variables, Constants.popupFormEditProfile);
+const formAddCardValidator = new FormValidator(variables, constants.formAddCard);
+const formEditProfileValidator = new FormValidator(variables, constants.popupFormEditProfile);
 const section = new Section(renderCards, '.cards');
 const popupWithImage = new PopupWithImage('.popup_open-image');
 const popupEditProfile = new PopupWithForm('.popup_edit-profile-info', handleProfileFormSubmit);
@@ -28,8 +28,8 @@ const userInfo = new UserInfo({
 
 function openPopupFormProfile() {
   const { name, occupation } = userInfo.getUserInfo();
-  Constants.popupInputFormName.value = name;
-  Constants.popupInputFormOccupation.value = occupation;
+  constants.popupInputFormName.value = name;
+  constants.popupInputFormOccupation.value = occupation;
   formEditProfileValidator.clearErrorsForm();
   popupEditProfile.open();
 };
@@ -47,8 +47,8 @@ function handleProfileFormSubmit(data) {
 
 function handleCardFormSubmit(data) {
   section.setItem(createCard({
-    name: data.cardTitle,
-    link: data.cardLink
+    name: data.value,
+    link: data.value
   }));
   popupAddImage.close();
 };
@@ -58,7 +58,7 @@ function renderCards(cardInfo) {
 }
 
 function createCard(cardInfo) {
-  const card = new Card(cardInfo, Constants.cardTemplate, () => {
+  const card = new Card(cardInfo, constants.cardTemplate, () => {
     popupWithImage.open(cardInfo.name, cardInfo.link);
   });
   const cardItem = card.generateCard();
@@ -67,8 +67,8 @@ function createCard(cardInfo) {
 
 //* EventListeners*//
 
-Constants.profileEditButton.addEventListener('click', openPopupFormProfile);
-Constants.profileAddButton.addEventListener('click', openAddPopup);
+constants.profileEditButton.addEventListener('click', openPopupFormProfile);
+constants.profileAddButton.addEventListener('click', openAddPopup);
 
 //*Form enable validation*//
 
