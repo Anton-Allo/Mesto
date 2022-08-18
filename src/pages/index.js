@@ -15,7 +15,10 @@ import { UserInfo } from '../components/UserInfo.js';
 
 const formAddCardValidator = new FormValidator(variables, constants.formAddCard);
 const formEditProfileValidator = new FormValidator(variables, constants.popupFormEditProfile);
-const section = new Section(renderCards, '.cards');
+const section = new Section({data: initialCards, renderer: (item) => {
+ const cardItem = createCard(item, '#cardTemplate');
+  section.setItem(cardItem);
+}}, '.cards');
 const popupWithImage = new PopupWithImage('.popup_open-image');
 const popupEditProfile = new PopupWithForm('.popup_edit-profile-info', handleProfileFormSubmit);
 const popupAddImage = new PopupWithForm('.popup_add-button', handleCardFormSubmit);
@@ -47,8 +50,8 @@ function handleProfileFormSubmit(data) {
 
 function handleCardFormSubmit(data) {
   section.setItem(createCard({
-    name: data.value,
-    link: data.value
+    name: data.name_location,
+    link: data.link_image
   }));
   popupAddImage.close();
 };
@@ -58,12 +61,13 @@ function renderCards(cardInfo) {
 }
 
 function createCard(cardInfo) {
-  const card = new Card(cardInfo, constants.cardTemplate, () => {
+  debugger;
+ const card = new Card(cardInfo, constants.cardTemplate, () => {
     popupWithImage.open(cardInfo.name, cardInfo.link);
   });
   const cardItem = card.generateCard();
   return cardItem;
-}
+} 
 
 //* EventListeners*//
 
