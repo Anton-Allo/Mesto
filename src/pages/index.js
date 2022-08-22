@@ -1,6 +1,6 @@
 'use strict';
 
-import '../pages/index.css';
+import './index.css';
 import * as constants from '../utils/Constants.js';
 import { Card } from '../components/Card.js';
 import { variables } from '../utils/ConfigValidation.js';
@@ -61,7 +61,6 @@ function renderCards(cardInfo) {
 }
 
 function createCard(cardInfo) {
-  debugger;
  const card = new Card(cardInfo, constants.cardTemplate, () => {
     popupWithImage.open(cardInfo.name, cardInfo.link);
   });

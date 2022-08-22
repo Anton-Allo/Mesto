@@ -7,4 +7,11 @@
   color: #ff0000;
   align-self: start;
   padding-left: 36px;
+  max-height: 15px;
+}
+
+@media screen and (max-width: 530px) {
+  .popup__input-error {
+    padding-left: 22px;
+  }  
 }

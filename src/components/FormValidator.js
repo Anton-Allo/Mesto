@@ -17,10 +17,10 @@ export class FormValidator {
     this._arrInputsFormActive.forEach(inputItem => {
       inputItem.classList.remove(this._inputErrorClass);
       this._deactivateInputError(inputItem);
-      this._checkButtonValidity();
     });
+    this._checkButtonValidity();
   }
-
+   
   _deactivateButtonSave() {
     this._submitButton.setAttribute('disabled', true);
     this._submitButton.classList.add(this._inactiveButtonClass);
@@ -70,10 +70,6 @@ export class FormValidator {
   }
 
   _setEventListeners(inputItem) {
-    this._formPopupActive.addEventListener('submit', (evt) => {
-      evt.preventDefault();
-    });
-
     inputItem.addEventListener('input', () => {
       this._checkInputValidity(inputItem);
     });
