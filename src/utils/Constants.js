@@ -1,6 +1,6 @@
 'use strict';
 
-export const cardTemplate = ('#cardTemplate');
+export const cardTemplate = '#cardTemplate';
 
 export const popupAddCard = document.querySelector('.popup_add-button');
 export const formAddCard = popupAddCard.querySelector('.popup__form');
@@ -10,3 +10,4 @@ export const profileEditButton = document.querySelector('.profile__edit-button')
 export const popupFormEditProfile = popupEditProfileInfo.querySelector('.popup__form');
 export const popupInputFormName = document.querySelector('.popup__input-form-name');
 export const popupInputFormOccupation = document.querySelector('.popup__input-form-occupation');
+export const editAvatarForm  = document.querySelector('.popup__avatar-form');

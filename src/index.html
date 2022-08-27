@@ -30,6 +30,7 @@
     <footer class="footer">
       <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
+
     <section class="popup popup_edit-profile-info">
       <div class="popup__container">
         <button aria-label="Выход" type="button" class="popup__close"></button>
@@ -43,6 +44,21 @@
         </form>
       </div>
     </section>
+
+  <section class="popup popup_avatar-edit">
+    <div class="popup__container">
+      <button class="popup__close" type="button" aria-label="Закрыть"></button>
+      <h3 class="popup__title">Обновить аватар</h3>
+      <form class="popup__form popup__avatar-form" name="addAvatar" action="#" method="get" novalidate>
+        <input id="avatarUrl-input" class="popup__input-form popup__input-form_avatar-url" required
+          placeholder="Ссылка на картинку" type="url" name="avatarUrl">
+        <span class="avatarUrl-input-error popup__input-error"></span>
+        <button class="popup__submit-button popup__save-form-button" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </section>
+
+
     <section class="popup popup_add-button">
       <div class="popup__container">
         <button aria-label="Выход" type="button" class="popup__close"></button>
@@ -57,12 +73,22 @@
       </div>
     </section>
   </div>
+
+
   <section class="popup popup_open-image">
     <figure class="popup__image-container">
       <button aria-label="Выход" type="button" class="popup__close"></button>
       <img src="#" class="popup__view-image" alt="Фотография">
       <figcaption class="popup__title-image"></figcaption>
     </figure>
+  </section>
+
+  <section class="popup popup_confirm-delete">
+    <div class="popup__container">
+      <button aria-label="Закрыть" type="button" class="popup__close"></button>
+      <h2 class="popup__title popup__title_confirm-delete">Вы уверены?</h2>
+      <button type="submit" class="popup__submit-button popup__submit-button_confirm-delete">Да</button>
+    </div>
   </section>
 
   <template id="cardTemplate">
@@ -74,6 +100,7 @@
       <div class="card__container">
         <h2 class="card__title"></h2>
         <button aria-label="Оценить" type="button" class="card__like-button"></button>
+        <span class="card__counter-likes"></span>  
       </div>
     </div>
   </template>

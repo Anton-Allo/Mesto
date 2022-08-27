@@ -1,10 +1,9 @@
 'use strict';
 
 export class Section {    
-  constructor({ data, renderer }, containerSelector) {        
-       this._renderedItems = data;        
+  constructor(renderer, containerSelector) { 
+       this._renderer = renderer;                   
        this._container = document.querySelector(containerSelector);        
-       this._renderer = renderer;    
 };
 
   rendererItems(initialArray) {
@@ -13,7 +12,7 @@ export class Section {
     });
   };
 
-  setItem(card) {
-    this._container.prepend(card);
+  setItem(item, createSubmit) {
+    createSubmit ? this._container.prepend(item) : this._container.append(item);  
   };
 };
