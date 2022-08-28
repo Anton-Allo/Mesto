@@ -1,4 +1,4 @@
-.profile__avatar_edit {
+.profile__disk {
   width: 120px;
   height: 120px;
   margin: 0;
@@ -10,7 +10,7 @@
   transition: 1s;
 }
 
-.profile__avatar_edit::before {
+.profile__disk::before {
   content: '';
   position: absolute;
   margin: 0;
@@ -20,7 +20,7 @@
   left: -1px;
   right: -1px;
   bottom: -1px;
-  background: no-repeat rgba(0, 0, 0, 0.8) url(../../../../images/edit-avatar-icon.svg);
+  background: no-repeat rgba(0, 0, 0, 0.8) url(../../../images/edit-avatar-icon.svg);
   background-position: center center;
   background-size: 26px;
   text-decoration: none;
@@ -29,13 +29,13 @@
   transition: 0.5s;
 }
 
-.profile__avatar_edit:hover::before {
+.profile__disk:hover::before {
   opacity: 1;
   cursor: pointer;
 }
 
 @media screen and (max-width: 730px) {
-  .profile__avatar_edit {
+  .profile__disk {
     margin-right: 0;
   }
 }
