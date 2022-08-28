@@ -161,7 +161,7 @@ Promise.all([api.getUserInfo(), api.getCards()])
 
 constants.profileAddButton.addEventListener('click', openAddPopup);
 constants.profileEditButton.addEventListener('click', openPopupFormProfile);
-//constants.avatarOpenPopupButtonEdit.addEventListener('click', openEditAvatarPopup);
+constants.popupOpenAvatarEdit.addEventListener('click', openEditAvatarPopup);
 
 
 //*Form enable validation*//

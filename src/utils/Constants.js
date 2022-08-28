@@ -11,3 +11,4 @@ export const popupFormEditProfile = popupEditProfileInfo.querySelector('.popup__
 export const popupInputFormName = document.querySelector('.popup__input-form-name');
 export const popupInputFormOccupation = document.querySelector('.popup__input-form-occupation');
 export const editAvatarForm  = document.querySelector('.popup__avatar-form');
+export const popupOpenAvatarEdit = document.querySelector('.profile__avatar_edit');
