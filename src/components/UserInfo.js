@@ -1,9 +1,9 @@
 'use strict';
 
 export class UserInfo {
-  constructor({ profileNameSelector, profileOccupationtSelector, profileAvatarSelector}) {
+  constructor({ profileNameSelector, profileOccupationSelector, profileAvatarSelector}) {
     this._profileName = document.querySelector(profileNameSelector);
-    this._profileOccupation = document.querySelector(profileOccupationtSelector);
+    this._profileOccupation = document.querySelector(profileOccupationSelector);
     this._profileAvatar = document.querySelector(profileAvatarSelector);
   };
 
@@ -14,9 +14,9 @@ export class UserInfo {
     };
   };
 
-  setUserInfo(title, subtitle, avatar) {
+  setUserInfo(title, about, avatar) {
     this._profileName.textContent = title;
-    this._profileOccupation.textContent = subtitle;
+    this._profileOccupation.textContent = about;
     this._profileAvatar.src = avatar;
   };
 };

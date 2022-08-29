@@ -16,14 +16,15 @@
     <main class="content">
       <section class="profile">
         <div class="profile__disk">
-          <img src="<%=require('./images/avatar-profile.jpg')%>" alt="Аватар" class="profile__avatar">
+          <img src="#" alt="Аватар" class="profile__avatar">
         </div>
         <div class="profile__info">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
           <button aria-label="Редактировать" type="button" class="profile__edit-button"></button>
           <p class="profile__occupation">Исследователь океана</p>
         </div>
-        <button type="button" class="profile__add-button"><img src="<%=require('./images/button_add.svg')%>" alt="Добавить"
+        <button type="button" class="profile__add-button">
+          <img src="<%=require('./images/button_add.svg')%>" alt="Добавить"
             class="profile__add-icon"></button>
       </section>
       <section class="cards">
@@ -36,11 +37,11 @@
     <section class="popup popup_edit-profile-info">
       <div class="popup__container">
         <button aria-label="Выход" type="button" class="popup__close"></button>
-        <form name="form-edit_profile-info" action="#" class="popup__form popup__edit-form" novalidate>
+        <form name="form-edit_profile-info" class="popup__form popup__edit-form" method="get" novalidate>
           <h2 class="popup__title">Редактировать профиль</h2>
-            <input type="text" placeholder="Ваше имя" name="userName" class="popup__input-form popup__input-form-name" minlength="2" maxlength="40" required id="inputNameProfile">
+            <input type="text" placeholder="Ваше имя" name="name" class="popup__input-form popup__input-form-name" minlength="2" maxlength="40" required id="inputNameProfile">
             <span class="popup__input-error inputNameProfile-error">Вы пропустили это поле.</span>
-            <input type="text" placeholder="Род занятий" name="userOccupation" class="popup__input-form popup__input-form-occupation" minlength="2" maxlength="200" required id="inputOccupationProfile">
+            <input type="text" placeholder="Род занятий" name="about" class="popup__input-form popup__input-form-occupation" minlength="2" maxlength="200" required id="inputOccupationProfile">
             <span class="popup__input-error inputOccupationProfile-error">Вы пропустили это поле.</span>
           <button aria-label="Сохранить" type="submit" class="popup__submit-button popup__save-form-button">Сохранить</button>
         </form>
@@ -51,7 +52,7 @@
     <div class="popup__container">
       <button class="popup__close" type="button" aria-label="Закрыть"></button>
       <h3 class="popup__title">Обновить аватар</h3>
-      <form class="popup__form popup__avatar-form" name="addAvatar" action="#" method="get" novalidate>
+      <form class="popup__form popup__avatar-form" name="addAvatar" method="get" novalidate>
         <input id="avatarUrl-input" class="popup__input-form popup__input-form_avatar-url" required
           placeholder="Ссылка на картинку" type="url" name="avatarUrl">
         <span class="avatarUrl-input-error popup__input-error"></span>
@@ -64,11 +65,11 @@
     <section class="popup popup_add-button">
       <div class="popup__container">
         <button aria-label="Выход" type="button" class="popup__close"></button>
-        <form name="form-add-card" action="#" class="popup__form popup__add-form" novalidate>
+        <form name="form-add-card" class="popup__form popup__add-form" method="get" novalidate>
           <h2 class="popup__title">Новое место</h2>
-          <input type="text" placeholder="Название" name="name_location" class="popup__input-form popup__input-form-location" minlength="2" maxlength="30" required id="inputLocation">
+          <input type="text" placeholder="Название" name="cardTitle" class="popup__input-form popup__input-form-location" minlength="2" maxlength="30" required id="inputLocation">
           <span class="popup__input-error inputLocation-error">Вы пропустили это поле.</span>
-          <input type="url" placeholder="Ссылка на картинку" name="link_image" class="popup__input-form popup__input-form-link" required id="inputLinkImage">
+          <input type="url" placeholder="Ссылка на картинку" name="cardLink" class="popup__input-form popup__input-form-link" required id="inputLinkImage">
           <span class="popup__input-error inputLinkImage-error">Вы пропустили это поле.</span>
           <button aria-label="Создать" type="submit" class="popup__submit-button popup__create-form-button">Создать</button>
         </form>

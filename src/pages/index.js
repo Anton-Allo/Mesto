@@ -22,16 +22,16 @@ const formEditAvatarValidator = new FormValidator(variables, constants.editAvata
 
 const section = new Section(addCard, '.cards');
 
-const popupWithImage = new PopupWithImage('.popup_open-image');
-const popupEditProfile = new PopupWithForm('.popup_edit-profile-info', handleProfileFormSubmit,  'Сохраняем...');
-const popupAddImage = new PopupWithForm('.popup_add-button', handleCardFormSubmit, 'Добавляем карточку...');
+const popupWithImage = new PopupWithImage(".popup_open-image");
+const popupEditProfile = new PopupWithForm(".popup_edit-profile-info", handleProfileFormSubmit,  'Сохраняем...');
+const popupAddImage = new PopupWithForm(".popup_add-button", handleCardFormSubmit, 'Добавляем карточку...');
 const popupEditAvatar = new PopupWithForm('.popup_avatar-edit', handleEditAvatarFormSubmit, 'Меняем аватар...');
-const popupDeleteCard = new PopupWithConfirmation('.popup_confirm-delete', 'Удаляем карточку...');
+const popupDeleteCard = new PopupWithConfirmation(".popup_confirm-delete", 'Удаляем карточку...');
 
 const userInfo = new UserInfo({
-  profileNameSelector: '.profile__name',
-  profileOccupationtSelector: '.profile__occupation',
-  profileAvatarSelector: '.profile__avatar'
+  profileNameSelector: ".profile__name",
+  profileOccupationSelector: ".profile__occupation",
+  profileAvatarSelector: ".profile__avatar"
 });
 
 //*Functions*//
@@ -58,12 +58,6 @@ function handleEditAvatarFormSubmit({ avatarUrl }) {
   });
 }
 
-function handleProfileFormSubmit({ name, about }) {
-  return api.editUserInfo(name, about).then((res) => {
-    userInfo.setUserInfo(res.name, res.about, res.avatar);
-  });
-}
-
 function handleCardFormSubmit(data) {
   const createSubmit = true;
   return api.addCard(data.cardTitle, data.cardLink).then((res) => {
@@ -72,12 +66,18 @@ function handleCardFormSubmit(data) {
   });
 }
 
-function addCard(cardInfo, createSubmit) {
-  section.setItem(createCard(cardInfo), createSubmit);
+function handleProfileFormSubmit({ name, about }) {
+  return api.editUserInfo(name, about).then((res) => {
+    userInfo.setUserInfo(res.name, res.about, res.avatar);
+  });
 }
 
 function deleteLastCard() {
   document.querySelector(".card").lastElementChild.remove();
+}
+
+function addCard(cardInfo, createSubmit) {
+  section.setItem(createCard(cardInfo), createSubmit);
 }
 
 function createCard(cardInfo) {
@@ -90,7 +90,7 @@ function createCard(cardInfo) {
         api
           .deleteCard(id)
           .then(() => {
-            card.deleteCard();
+            card.removeCard();
             popupDeleteCard.close();
         api
           .getCards()
@@ -117,7 +117,7 @@ function createCard(cardInfo) {
     (id) => {
       if (card.checkedLike()) {
         api
-          .removeLike(id)
+          .deleteLike(id)
           .then((res) => {
             card.setLikes(res.likes);
           })
@@ -128,7 +128,7 @@ function createCard(cardInfo) {
           });
       } else {
         api
-          .pushLike(id)
+          .addLike(id)
           .then((res) => {
             card.setLikes(res.likes);
           })
