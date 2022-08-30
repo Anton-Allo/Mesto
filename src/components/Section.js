@@ -13,6 +13,6 @@ export class Section {
   };
 
   setItem(item, createSubmit) {
-    createSubmit ? this._container.prepend(item) : this._container.append(item);  
+    createSubmit ? this._container.prepend(item) : this._container.append(item)
   };
 };

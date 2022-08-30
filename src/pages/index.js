@@ -62,7 +62,6 @@ function handleCardFormSubmit(data) {
   const createSubmit = true;
   return api.addCard(data.cardTitle, data.cardLink).then((res) => {
     addCard(res, createSubmit);
-    deleteLastCard();
   });
 }
 
@@ -70,10 +69,6 @@ function handleProfileFormSubmit({ name, about }) {
   return api.editUserInfo(name, about).then((res) => {
     userInfo.setUserInfo(res.name, res.about, res.avatar);
   });
-}
-
-function deleteLastCard() {
-  document.querySelector(".card").lastElementChild.remove();
 }
 
 function addCard(cardInfo, createSubmit) {
